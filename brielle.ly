@@ -1,6 +1,5 @@
 \version "2.12.3"
 
-TimeKey = { \time 6/8 \key g \major }
 brielleRealChords = \chordmode {
   e2.:m
   g:aug

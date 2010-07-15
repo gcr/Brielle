@@ -11,6 +11,8 @@ Yb,  88      `8b                           IP'`Yb IP'`Yb
     88888888P"  8P      `Y88P""Y8888P"Y8888P'"Y888P'"Y88888P"Y888
 %}
 
+TimeKey = { \time 6/8 \key g \major }
+
 % verse A
 brLyricsVA=\lyricmode {
   There's a hand--written note

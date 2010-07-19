@@ -8,7 +8,7 @@
 
 \new Score <<
   %\new ChordNames \brChords
-  \new Staff { \brTimeKey \autoBeamOff \new Voice = "brielleLyrics" \brVoice }
+  \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
   %{
   \new StaffGroup <<

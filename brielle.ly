@@ -81,38 +81,40 @@ brLyricsCEndB = \lyricmode {
 brVoiceIntro  =  \relative c'' {
   R2.*16 |
 }
-brVoiceVA = \relative c'' {
+brVoiceVAa = \relative c'' {
   r4 b a | % there's a
   a g8 e4 d8~ |
-  \tag #'first { d2. | } % note
-  \tag #'second { d8~ d2 d8 | } % white...and robin's
+  d2. | % note
   e4 g a8 g8~ | % stuck in the
   g2 r8 e |
-  \tag #'first { d4 d g | } % her screened-in
-  \tag #'second { d4 e8 g4. | } % her screened-in
+  d4 d g | % her screened-in
   fis2. |
-  r2. |
-  \tag #'first {
-    r8 d b'4 a | % And I am sailing
-    a4 g e8 d8 ~ |
-  }
-  \tag #'second {
-    r8 d b' a r a | % And I left home
-    a4 g8 e4 d8 ~ |
-  }
+  R2. |
+  r8 d b'4 a | % And I am sailing
+  a4 g e8 d8 ~ |
   d2 r8 d8 |
   e4 g8 a4 e8 ~ |
-  \tag #'first {
-    e2. | % ...that day
-    d4. g | % miles from
-    a2. | % shore
-    r2. |
-  }
-  \tag #'second {
-    e2 r8 d8 | % here is
-    d8 e4 g4. | % anyone's
-    a2. | r2. | % guess
-  }
+  e2. | % ...that day
+  d4. g | % miles from
+  a2. | % shore
+  R2. |
+}
+brVoiceVAb = \relative c'' {
+  r4 b a | % She was
+  a g8 e4 d8~ |
+  d2 r8 d8 | % white...and robin's
+  e4 g a8 g8~ |
+  g2 r8 e |
+  d4 e8 g4. | % grandmother's
+  fis2. |
+  R2. |
+  r8 d b' a r a | % And I left home
+  a4 g8 e4 d8 ~ |
+  d2 r8 d8 |
+  e4 g8 a4 e8 ~ |
+  e2 r8 d8 | % here is
+  d8 e4 g4. | % anyone's
+  a2. | R2. | % guess
 }
 brVoiceTr = \relative c'' {
   r4 b g | a b g | a4. d,8 b'4 | a4 g8 b4. | e,4 r e | d d g | g8 ~ a8 ~ a2 |
@@ -154,8 +156,8 @@ brChords = {
 brVoice = {
   \autoBeamOff
   \brVoiceIntro
-  \removeWithTag #'second \brVoiceVA
-  \removeWithTag #'first \brVoiceVA
+  \brVoiceVAa
+  \brVoiceVAb
 }
 
 brLyrics = {

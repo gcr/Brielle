@@ -88,14 +88,20 @@ brVoiceVA = \relative c'' {
   \tag #'second { d8~ d2 d8 | } % white...and robin's
   e4 g a8 g8~ | % stuck in the
   g2 r8 e |
-  d4 d g |
+  \tag #'first { d4 d g | } % her screened-in
+  \tag #'second { d4 e8 g4. | } % her screened-in
   fis2. |
   r2. |
-  \tag #'first { r8 d b'4 a | } % And I am sailing
-  \tag #'second { r8 d, b' a r a | } % And I am sailing
-  a4 g e |
-  d8~ d2 d8 |
-  e4 g a |
+  \tag #'first {
+    r8 d b'4 a | % And I am sailing
+    a4 g e8 d8 ~ |
+  }
+  \tag #'second {
+    r8 d b' a r a | % And I left home
+    a4 g8 e4 d8 ~ |
+  }
+  d2 r8 d8 |
+  e4 g8 a4 e8 ~ |
   \tag #'first {
     e2. | % ...that day
     d4. g | % miles from
@@ -103,8 +109,8 @@ brVoiceVA = \relative c'' {
     r2. |
   }
   \tag #'second {
-    e8~ e2 d8 | % here is
-    e8 e4 g4. | % anyone's
+    e2 r8 d8 | % here is
+    d8 e4 g4. | % anyone's
     a2. | r2. | % guess
   }
 }

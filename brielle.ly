@@ -55,7 +55,7 @@ brLyricsCA = \lyricmode {
 brLyricsCB = \lyricmode {
   The fro -- zen days we set a -- blaze
   sent me drif -- ting a -- way!
-  Like a but -- ter -- fly I floa -- ted by,
+  Like a but -- ter -- fly, I floa -- ted by
   \tag #'preprod { and now I'm a -- lone. }
   \tag #'release { and now you're a -- lone. }
   I wish | I knew when I'll be back a -- gain.
@@ -123,43 +123,44 @@ brVoiceVAb = \relative c'' {
   a2. | R2. | % guess
 }
 brVoiceTr = \relative c'' {
+  \break
   r4 b g8 a8~ | % When the new
-  a4 b g |
-  a4. d,8 b'4 |
-  a4 g8 b4. |
-  e,4 r e |
-  d d g |
-  g8[ a8] ~ a2 |
+  a8 b4 g a8~|    % TIES!
+  a4 g8 b4 a8~ |  % TIES!
+  a4 g8 b4 e,8~ | % TIES! Triple tied measure combo
+  e4 r e |
+  d d g8 a8~ |    % SO MANY TIES WHAT.
+  a2. |
   r2.|
 }
 brVoiceCA = \relative c'' {
   r2.|
-  d,4 d g |
+  d,4 d g8 a~ | % Good bye, Brie-elle!
   a2. |
   r4 a4 g |
   c8[ d]~d2 | %se-easons
-  c2 b4 |
+  c4. b |
   e,2. |
-  r4 d g | % of the
-  a b g |
-  a b g |
-  g( a2) |
+  r4 d g8 a8~ | % of the
+  a8 b4 g a8~ |
+  a8 b4 g g8(|
+  a2.) |
   r4 a b |
-  a g8 e8 ~ e4 | % you around
+  a g8 e4. | % you around
   r4 a4 b |
   a g d~ |
-  d2 d4 | % town! The--
+  d2 d8 a'8~ | % town! The--
 }
 brVoiceCB = \relative c'' {
   % The
-  a g d | % frozen days
-  a' b g |
-  g( a2) |
+  a8 g4 d a'8 ~| % frozen days
+  a8 b4 g g8(|
+  a2.) |
   r4 a g | % sent me
   c8[ d]~d2 | % drifting
   c2 b4 |
   e,2. |
-  r4 a b | % Like a 
+  r4 a a | % Like a 
   a8 g4 d d8 | % Butterfly, I 
   a'8 g4 d g8 | % floated by, and
   a4 b g8 a8~ |
@@ -167,7 +168,7 @@ brVoiceCB = \relative c'' {
   a g e~ |
   e a b|
   a4 g8 d4.|
-  r2 e4 | % so
+  r2 a'4 | % so
 }
 brVoiceCEndA = \relative c'' {
   % ... So

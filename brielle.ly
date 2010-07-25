@@ -72,15 +72,15 @@ brLyricsVB = \lyricmode {
   that wind through the trees.
 
   And_bre -- athing the sweet o -- cean air
-  \tag #'preprod { makes a shy boy aware }
-  makes a shy boy aware
+  \tag #'preprod { makes a shy boy a -- ware }
+  \tag #'preprod { makes a blue -- bird a -- ware }
   that he could be free!
 }
 
 brLyricsCEndB = \lyricmode {
-  So until then, I wish you well
-  So until then, I wish you well
-  For the time being, farewell, my dear Bri -- elle!
+  So un -- til then, I wish you well
+  So un -- til then, I wish you well
+  For the time be -- ing, fare -- well, my dear Bri -- elle!
 }
 
 %%% SINGING VOICE

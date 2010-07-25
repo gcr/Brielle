@@ -13,6 +13,12 @@ Yb,  88      `8b                           IP'`Yb IP'`Yb
 
 brTimeKey = { \time 6/8 \key g \major }
 
+%%% Pick which flavor of things you want
+%%% #'preprod or #'release
+brVAFlavor = #'preprod
+brCAFlavor = #'preprod
+brCBFlavor = #'preprod
+
 %%% LYRICS
 brLyricsVA = \lyricmode {
   There's a hand -- writ -- ten note
@@ -24,8 +30,8 @@ brLyricsVA = \lyricmode {
 
   She was still wear -- ing white
   and ro -- bin's egg blue;
-  her grand -- mo -- ther's dress!
-  and I left home ear -- ly this year
+  her grand -- mo -- ther's dress.
+  And I left home ear -- ly this year.
   How I wound up here
   is a -- ny -- one's guess.
 }
@@ -34,7 +40,7 @@ brLyricsTr = \lyricmode {
   % Transition
   When the new sites grow old
   and I start to feel cold,
-  I'll sail home a -- gain! __
+  I'll sail home a -- gain. __
 }
 
 brLyricsCA = \lyricmode {
@@ -47,15 +53,15 @@ brLyricsCA = \lyricmode {
   our dear o -- cean town.
 }
 brLyricsCB = \lyricmode {
-  The frozen days that we set a -- blaze
-  sent me dri -- fting a -- way!
-  Like a but -- ter -- fly, I floa -- ted by,
+  The fro -- zen days we set a -- blaze
+  sent me drif -- ting a -- way!
+  Like a but -- ter -- fly I floa -- ted by,
   \tag #'preprod { and now I'm a -- lone. }
   \tag #'release { and now you're a -- lone. }
-  I wish | I knew when I'll be back again.
+  I wish | I knew when I'll be back a -- gain.
 }
 brLyricsCEndA = \lyricmode {
-  So until then, I wish you well,
+  So un -- til then, I wish you well,
   my dear Bri -- elle!
 }
 
@@ -117,7 +123,58 @@ brVoiceVAb = \relative c'' {
   a2. | R2. | % guess
 }
 brVoiceTr = \relative c'' {
-  r4 b g | a b g | a4. d,8 b'4 | a4 g8 b4. | e,4 r e | d d g | g8 ~ a8 ~ a2 |
+  r4 b g8 a8~ | % When the new
+  a4 b g |
+  a4. d,8 b'4 |
+  a4 g8 b4. |
+  e,4 r e |
+  d d g |
+  g8[ a8] ~ a2 |
+  r2.|
+}
+brVoiceCA = \relative c'' {
+  r2.|
+  d,4 d g |
+  a2. |
+  r4 a4 g |
+  c8[ d]~d2 | %se-easons
+  c2 b4 |
+  e,2. |
+  r4 d g | % of the
+  a b g |
+  a b g |
+  g( a2) |
+  r4 a b |
+  a g8 e8 ~ e4 | % you around
+  r4 a4 b |
+  a g d~ |
+  d2 d4 | % town! The--
+}
+brVoiceCB = \relative c'' {
+  % The
+  a g d | % frozen days
+  a' b g |
+  g( a2) |
+  r4 a g | % sent me
+  c8[ d]~d2 | % drifting
+  c2 b4 |
+  e,2. |
+  r4 a b | % Like a 
+  a8 g4 d d8 | % Butterfly, I 
+  a'8 g4 d g8 | % floated by, and
+  a4 b g8 a8~ |
+  a4. g8 b4 |
+  a g e~ |
+  e a b|
+  a4 g8 d4.|
+  r2 e4 | % so
+}
+brVoiceCEndA = \relative c'' {
+  % ... So
+  a4 g e |
+  a4 b a |
+  g2. |
+  d4 g fis8 g8 ~ |
 }
 
 %%% CHORD NAMES
@@ -156,18 +213,23 @@ brChords = {
 brVoice = {
   \autoBeamOff
   \brVoiceIntro
-  \brVoiceVAa
-  \brVoiceVAb
+  \keepWithTag \brVAFlavor \brVoiceVAa
+  \keepWithTag \brVAFlavor \brVoiceVAb
+
+  \brVoiceTr
+  \keepWithTag \brCAFlavor \brVoiceCA
+  \keepWithTag \brCBFlavor \brVoiceCB
+  \brVoiceCEndA
 }
 
 brLyrics = {
   % Verse 1 and transition
-  \brLyricsVA
+  \keepWithTag \brVAFlavor \brLyricsVA
   \brLyricsTr
 
   % Chorus
-  \brLyricsCA
-  \brLyricsCB
+  \keepWithTag \brCAFlavor \brLyricsCA
+  \keepWithTag \brCBFlavor \brLyricsCB
   \brLyricsCEndA
 
   % Verse 2 and transition

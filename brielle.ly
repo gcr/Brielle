@@ -18,6 +18,7 @@ brTimeKey = { \time 6/8 \key g \major }
 brVAFlavor = #'preprod
 brCAFlavor = #'preprod
 brCBFlavor = #'preprod
+brVBFlavor = #'preprod
 
 %%% LYRICS
 brLyricsVA = \lyricmode {
@@ -71,10 +72,11 @@ brLyricsVB = \lyricmode {
   and cob -- ble -- stone paths
   that wind through the trees.
 
-  And_bre -- athing the sweet o -- cean air
-  \tag #'preprod { makes a shy boy a -- ware }
-  \tag #'preprod { makes a blue -- bird a -- ware }
-  that he could be free!
+  Bre -- athing the sweet o -- cean air
+  \tag #'preprod { makes a shy boy a -- ware
+                   that he could be free! }
+  \tag #'release { makes a blue -- bird a -- ware 
+                   that she could be free! }
 }
 
 brLyricsCEndB = \lyricmode {
@@ -84,9 +86,6 @@ brLyricsCEndB = \lyricmode {
 }
 
 %%% SINGING VOICE
-brVoiceIntro  =  \relative c'' {
-  R2.*16 |
-}
 brVoiceVAa = \relative c'' {
   r4 b a | % there's a
   a g8 e4 d8~ |
@@ -123,7 +122,6 @@ brVoiceVAb = \relative c'' {
   a2. | R2. | % guess
 }
 brVoiceTr = \relative c'' {
-  \break
   r4 b g8 a8~ | % When the new
   a8 b4 g a8~|    % TIES!
   a4 g8 b4 a8~ |  % TIES!
@@ -172,12 +170,31 @@ brVoiceCB = \relative c'' {
 }
 brVoiceCEndA = \relative c'' {
   % ... So
-  a4 g e |
-  a4 b a |
+  a4 g d |
+  a'4 b a |
   g2. |
   d4 g fis8 g8 ~ |
 }
-
+brVoiceVB = \relative c'' {
+  r4 b8 a4 a8~ | % Skipping
+  a8 g4 e d8 ~|
+  d2 r8 d8 |
+  e8 g4 a e8 ~| % cobblestone
+  e2 r8 e |
+  d4 d g8 a8 ~ |
+  a2. | % trees!
+  R2. |
+  r4 b8 a4 a8 | % And breathing the
+  \times 5/6 {
+    a4 g e    %   WTF !!
+  } d8~ | % sweet ocean air ~
+  d4 d4 d4 | % ~air makes a
+  e4 g a8 e8 ~ | % shy boy a-ware
+  e8 ~e2 d8 | % ~ware that
+  e4 g e | % he could be
+  a2. | % free!
+  R2. |
+}
 %%% CHORD NAMES
 brChordsTr = \chordmode {
   e2.:m
@@ -213,7 +230,7 @@ brChords = {
 
 brVoice = {
   \autoBeamOff
-  \brVoiceIntro
+  R2.*16 |
   \keepWithTag \brVAFlavor \brVoiceVAa
   \keepWithTag \brVAFlavor \brVoiceVAb
 
@@ -221,6 +238,11 @@ brVoice = {
   \keepWithTag \brCAFlavor \brVoiceCA
   \keepWithTag \brCBFlavor \brVoiceCB
   \brVoiceCEndA
+  g'2. | % tied with previous
+  R2.*15
+  \pageBreak
+  \keepWithTag \brVBFlavor \brVoiceVB
+  %\brVoiceCEndA
 }
 
 brLyrics = {
@@ -234,13 +256,13 @@ brLyrics = {
   \brLyricsCEndA
 
   % Verse 2 and transition
-  \brLyricsVB
+  \keepWithTag \brVBFlavor \brLyricsVB
   \brLyricsTr
 
   % Chorus
-  \brLyricsCA
-  \brLyricsCB
-  \brLyricsCEndB
+  \keepWithTag \brCAFlavor \brLyricsCA
+  \keepWithTag \brCBFlavor \brLyricsCB
+  \keepWithTag \brCBFlavor \brLyricsCEndB
 }
 
 brGuitar = {

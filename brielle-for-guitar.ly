@@ -6,7 +6,7 @@
 
 \include "brielle.ly"
 
-\new Score <<
+\score {<<
   %\new ChordNames \brChords
   \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
@@ -16,7 +16,7 @@
     \new TabStaff  { \brTimeKey \transpose c' c \brGuitar }
   >>
   %}
->>
+>>}
 
 %#(set-global-staff-size 25)
 \layout {

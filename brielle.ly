@@ -59,7 +59,7 @@ brLyricsCB = \lyricmode {
   Like a but -- ter -- fly, I floa -- ted by
   \tag #'preprod { and now I'm a -- lone. }
   \tag #'release { and now you're a -- lone. }
-  I wish | I knew when I'll be back a -- gain.
+  I wish I knew when I'll be back a -- gain.
 }
 brLyricsCEndA = \lyricmode {
   So un -- til then, I wish you well,
@@ -80,8 +80,8 @@ brLyricsVB = \lyricmode {
 }
 
 brLyricsCEndB = \lyricmode {
-  So un -- til then, I wish you well
-  So un -- til then, I wish you well
+  So un -- til then, I wish you well.
+  So un -- til then, I wish you well!
   For the time be -- ing, fare -- well, my dear Bri -- elle!
 }
 
@@ -108,7 +108,7 @@ brVoiceVAb = \relative c'' {
   r4 b a | % She was
   a g8 e4 d8~ |
   d2 r8 d8 | % white...and robin's
-  e4 g a8 g8~ |
+  e8 g4 a4 g8~ |
   g2 r8 e |
   d4 e8 g4. | % grandmother's
   fis2. |
@@ -156,22 +156,22 @@ brVoiceCB = \relative c'' {
   a2.) |
   r4 a g | % sent me
   c8[ d]~d2 | % drifting
-  c2 b4 |
-  e,2. |
-  r4 a a | % Like a 
-  a8 g4 d d8 | % Butterfly, I 
+  c2 b8 e,8 ~|
+  e2. |
+  r4 a a8 a8 | % Like a 
+  g4 d4. d8 | % Butterfly, I 
   a'8 g4 d g8 | % floated by, and
   a4 b g8 a8~ |
-  a4. g8 b4 |
-  a g e~ |
-  e a b|
+  a4 g8 b4 a8 ~| % ~lone! I wish I
+  a8 g4 e4.~ |
+  e4 a b|
   a4 g8 d4.|
-  r2 a'4 | % so
+  r2 a'8 a8~| % so
 }
 brVoiceCEndA = \relative c'' {
   % ... So
-  a4 g d |
-  a'4 b a |
+  a8 g4 d4 a'8~|
+  a8 b4 a g8~ |
   g2. |
   d4 g fis8 g8 ~ |
 }
@@ -188,12 +188,28 @@ brVoiceVB = \relative c'' {
   \times 5/6 {
     a4 g e    %   WTF !!
   } d8~ | % sweet ocean air ~
-  d4 d4 d4 | % ~air makes a
-  e4 g a8 e8 ~ | % shy boy a-ware
-  e8 ~e2 d8 | % ~ware that
-  e4 g e | % he could be
+  d4 d4 d8 e8 ~| % ~air makes a shy
+  e4 g a8 g8 ~ | % shy boy a-ware
+  g2 r8 d8 | % ~ware that
+  d4 b'8 c4 a8~ | % he could be
   a2. | % free!
   R2. |
+}
+brVoiceCEndB = \relative c'' {
+  % ... So
+  a8 g4 d a'8~| % until then, I
+  a8 b4 a g8~|
+  g2. |
+  r2 a8 a8~|
+  a8 g4 d a'8~|
+  a8 b4 a g8~|
+  g2. |
+  r2. |
+  a8 g4 d4. | % For the time
+  a'8 b4 a4 g8~ |
+  g2. |
+  d4 g fis8 g8 ~ |
+  g2. |
 }
 %%% CHORD NAMES
 brChordsTr = \chordmode {
@@ -242,7 +258,12 @@ brVoice = {
   R2.*15
   \pageBreak
   \keepWithTag \brVBFlavor \brVoiceVB
-  %\brVoiceCEndA
+  \brVoiceTr
+  \keepWithTag \brCAFlavor \brVoiceCA
+  \keepWithTag \brCBFlavor \brVoiceCB
+  \brVoiceCEndB
+  R2.*3 |
+  \bar "|."
 }
 
 brLyrics = {

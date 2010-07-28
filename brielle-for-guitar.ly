@@ -10,12 +10,10 @@
   %\new ChordNames \brChords
   \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
-  %{
   \new StaffGroup <<
     \new Staff { \brTimeKey \brGuitar }
     \new TabStaff  { \brTimeKey \transpose c' c \brGuitar }
   >>
-  %}
 >>}
 
 %#(set-global-staff-size 25)

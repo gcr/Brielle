@@ -12,7 +12,10 @@
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
   \new StaffGroup <<
     \new Staff { \brTimeKey \brGuitar }
-    \new TabStaff  { \brTimeKey \transpose c' c \brGuitar }
+    \new TabStaff \with {% bigger letters
+      fontSize=#2
+      \override StaffSymbol #'staff-space = #1.6 % default 1.5
+    } { \brTimeKey \transpose c' c \brGuitar }
   >>
 >>}
 

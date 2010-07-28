@@ -223,6 +223,25 @@ brChordsTr = \chordmode {
 }
 
 %%% GUITAR
+brGuitarIntro = \relative c' {
+  \repeat unfold 2 { c8 g' d } |
+  \repeat unfold 2 { b8 g' d } |
+  \repeat unfold 2 { d8 a' d, } |
+  g,8 a' b d, g d |
+  \repeat unfold 2 { c8 g' d } |
+  \repeat unfold 2 { g,8 g' d } |
+  d e fis a d, g | % the first D should be 8va lower
+  d fis g a d g, |
+
+  \repeat unfold 2 { c,8 g' d } |
+  \repeat unfold 2 { b8 g' d } |
+  \repeat unfold 2 { d8 a' d, } |
+  g,8 a' b d, g d |
+  \repeat unfold 2 { c8 g' d } |
+  \repeat unfold 2 { e g d } |
+  d e fis a d, g | % first D: 8va lower
+  d fis g a d g, |
+}
 brGuitarTr = \relative c' {
   \chordmode {
     e2.:m           % dotted half-note E minor
@@ -256,7 +275,6 @@ brVoice = {
   \brVoiceCEndA
   g'2. | % tied with previous
   R2.*15
-  \pageBreak
   \keepWithTag \brVBFlavor \brVoiceVB
   \brVoiceTr
   \keepWithTag \brCAFlavor \brVoiceCA
@@ -287,5 +305,8 @@ brLyrics = {
 }
 
 brGuitar = {
+  \brGuitarIntro
+  \brGuitarIntro % also VAa
+  \brGuitarIntro % also VAb
   \brGuitarTr
 }

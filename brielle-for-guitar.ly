@@ -1,26 +1,33 @@
 \version "2.12.3"
 
-%{
-  Layout and paper settings for Brielle
-%}
+% Layout and paper settings for Brielle
 
 \include "brielle.ly"
 
 \score {<<
   %\new ChordNames \brChords
   \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
+
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
+
   \new StaffGroup <<
     \new Staff { \brTimeKey \brGuitar }
-    \new TabStaff \with {% bigger letters
-      fontSize=#2
-      \override StaffSymbol #'staff-space = #1.6 % default 1.5
-    } { \brTimeKey \transpose c' c \brGuitar }
+    \new TabStaff  { \brTimeKey \transpose g' g \brGuitar }
   >>
 >>}
 
 %#(set-global-staff-size 25)
 \layout {
+  % This squashes slashes (set with \sl or \improvisationOn) to be on the same
+  % staff line. Applied to every voice.
+  \context { \Voice
+    \consists "Pitch_squash_engraver"
+  }
+  % Bigger letters! Default tab staff is _un_readable_
+  \context { \TabStaff
+    fontSize=#2
+    \override StaffSymbol #'staff-space = #1.6 % default 1.5
+  }
 }
 \paper {
   #(set-paper-size "letter")

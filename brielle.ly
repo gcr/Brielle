@@ -1,4 +1,4 @@
-%{
+%{ Brielle by Sky Sailing -- engraved by gcr
  ,ggggggggggg,                                                   
 dP"""88""""""Y8,                           ,dPYb, ,dPYb,         
 Yb,  88      `8b                           IP'`Yb IP'`Yb         
@@ -11,16 +11,32 @@ Yb,  88      `8b                           IP'`Yb IP'`Yb
     88888888P"  8P      `Y88P""Y8888P"Y8888P'"Y888P'"Y88888P"Y888
 %}
 
+%%% { CONFIGURATION
 brTimeKey = { \time 6/8 \key g \major }
 
-%%% Pick which flavor of things you want
-%%% #'preprod or #'release
+% Pick which flavor of things you want
+% #'preprod or #'release
 brVAFlavor = #'preprod
 brCAFlavor = #'preprod
 brCBFlavor = #'preprod
 brVBFlavor = #'preprod
 
-%%% LYRICS
+% slashes -- turn on improvisation (voices need the "Pitch_squash_engraver")
+% and hide tab noteheads.
+sl = {
+  \improvisationOn
+  \override TabNoteHead #'transparent = ##t
+  %\override TabNoteHead #'stencil = ##f
+  % ^ this is better but makes warnings
+}
+nsl = {
+  \improvisationOff
+  \revert TabNoteHead #'transparent
+  %\revert TabNoteHead #'stencil
+}
+%%% }
+
+%%% { LYRICS
 brLyricsVA = \lyricmode {
   There's a hand -- writ -- ten note
   pressed in the door
@@ -84,8 +100,9 @@ brLyricsCEndB = \lyricmode {
   So un -- til then, I wish you well!
   For the time be -- ing, fare -- well, my dear Bri -- elle!
 }
+%%% }
 
-%%% SINGING VOICE
+%%% { SINGING VOICE
 brVoiceVAa = \relative c'' {
   r4 b a | % there's a
   a g8 e4 d8~ |
@@ -211,7 +228,9 @@ brVoiceCEndB = \relative c'' {
   d4 g fis8 g8 ~ |
   g2. |
 }
-%%% CHORD NAMES
+%%% }
+
+%%% { CHORD NAMES
 brChordsTr = \chordmode {
   e2.:m
   g:aug
@@ -221,8 +240,9 @@ brChordsTr = \chordmode {
   g
   d
 }
+%%% }
 
-%%% GUITAR
+%%% { GUITAR
 brGuitarIntro = \relative c' {
   \repeat unfold 2 { c8 g' d } |
   \repeat unfold 2 { b8 g' d } |
@@ -252,13 +272,12 @@ brGuitarTr = \relative c' {
   }
   <b d g d'>
   <d a' d fis>
-  \chordmode {
-  }
 }
 
+%%% }
 
-%%%%%%%%%%%%%%%%%%%
-% Overall structure
+
+%%% { STRUCTURE
 brChords = {
   \brChordsTr
 }
@@ -310,3 +329,7 @@ brGuitar = {
   \brGuitarIntro % also VAb
   \brGuitarTr
 }
+
+%%% }
+
+% vim: foldmethod=marker foldmarker={,}

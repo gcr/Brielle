@@ -25,14 +25,14 @@ brVBFlavor = #'preprod
 % and hide tab noteheads.
 sl = {
   \improvisationOn
-  \override TabNoteHead #'transparent = ##t
-  %\override TabNoteHead #'stencil = ##f
+  %\override TabNoteHead #'transparent = ##t
+  \override TabNoteHead #'stencil = ##f
   % ^ this is better but makes warnings
 }
 nsl = {
   \improvisationOff
-  \revert TabNoteHead #'transparent
-  %\revert TabNoteHead #'stencil
+  %\revert TabNoteHead #'transparent
+  \revert TabNoteHead #'stencil
 }
 %%% }
 
@@ -231,6 +231,16 @@ brVoiceCEndB = \relative c'' {
 %%% }
 
 %%% { CHORD NAMES
+brChordsIntro = \chordmode {
+  c2.:sus2
+  g2.
+  d2.
+  g4.:sus2
+  g4.
+  c2.:sus2
+  g2.
+  d2. s2.
+}
 brChordsTr = \chordmode {
   e2.:m
   g:aug
@@ -270,8 +280,9 @@ brGuitarTr = \relative c' {
     cis:m6-^5       % 1st inverted A alternate: g:5-/des
     c
   }
-  <b d g d'>
-  <d a' d fis>
+  <b d g d'>4. \sl c8 c4 \nsl |
+  <d a' d fis>4. \sl d8 d4 |
+  d4 d8 d8 d8 d8 \nsl |
 }
 
 %%% }
@@ -279,6 +290,9 @@ brGuitarTr = \relative c' {
 
 %%% { STRUCTURE
 brChords = {
+  \repeat unfold 6 {
+    \brChordsIntro
+  }
   \brChordsTr
 }
 

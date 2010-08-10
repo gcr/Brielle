@@ -5,7 +5,7 @@
 \include "brielle.ly"
 
 \score {<<
-  %\new ChordNames \brChords
+  \new ChordNames \brChords
   \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
 
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics

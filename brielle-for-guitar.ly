@@ -6,8 +6,8 @@
 
 \score {<<
   \new ChordNames \brChords
-  \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
 
+  \new Staff { \brTimeKey \new Voice = "brielleLyrics" \brVoice }
   \new Lyrics \lyricsto "brielleLyrics" \brLyrics
 
   \new StaffGroup <<
@@ -23,14 +23,22 @@
   \context { \Voice
     \consists "Pitch_squash_engraver"
   }
-  % Bigger letters! Default tab staff is _un_readable_
+  % Bigger letters! Default tab staff is _unreadable_
   \context { \TabStaff
     fontSize=#2
     \override StaffSymbol #'staff-space = #1.6 % default 1.5
   }
 }
 \paper {
-  #(set-paper-size "letter")
+  % DEBUG -- this is so I can have Evince open on the right hand side while I
+  % work. It's very nice, but not appropriate.
+  paper-height = 100\cm
+  paper-width = 13\cm
+  top-margin = .5\cm
+  bottom-margin = .5\cm
+  left-margin = .5\cm
+  right-margin = .5\cm
+  %#(set-paper-size "letter")
 }
 \header {
   title         = \markup {
@@ -48,4 +56,3 @@
     \line { Transcription by gcr. Engraving by GNU Lilypond -- www.lilypond.org }
   } }
 }
-#(set-default-paper-size "letter")

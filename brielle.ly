@@ -51,9 +51,9 @@ brLyricsVA = \lyricmode {
   She was still wear -- ing white
   and ro -- bin's egg blue;
   her grand -- mo -- ther's dress.
-  \tag #'preprod { And }
-  \tag #'release { When }
-      I left home ear -- ly this year.
+  \tag #'preprod { And I left home }
+  \tag #'release { When I left }
+      ear -- ly this year.
   How I wound up here
   is a -- ny -- one's guess.
 }
@@ -150,7 +150,12 @@ brVoiceVAb = \relative c'' {
   d4 e8 g4. | % grandmother's
   fis2. |
   R2. |
-  r8 d b' a r a | % And I left home
+  \tag #'preprod {
+    r8 d b' a r a | % And I left home
+  }
+  \tag #'release {
+    r8 d, b'4 a | % When I left
+  }
   a4 g8 e4 d8 ~ |
   d2 r8 d8 |
   e4 g8 a4 e8 ~ |

@@ -1,6 +1,6 @@
 LILYPOND = /usr/bin/lilypond
 
-all: *.pdf
+all: brielle-for-guitar.pdf
 
 %.ps : *.ly
 	$(LILYPOND) --ps $*.ly

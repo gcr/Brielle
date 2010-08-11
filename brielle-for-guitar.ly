@@ -1,8 +1,51 @@
+%{ Brielle by Sky Sailing -- engraved by gcr
+ ,ggggggggggg,                                                   
+dP"""88""""""Y8,                           ,dPYb, ,dPYb,         
+Yb,  88      `8b                           IP'`Yb IP'`Yb         
+ `"  88      ,8P             gg            I8  8I I8  8I         
+     88aaaad8P"              ""            I8  8' I8  8'         
+     88""""Y8ba   ,gggggg,   gg    ,ggg,   I8 dP  I8 dP   ,ggg,  
+     88      `8b  dP""""8I   88   i8" "8i  I8dP   I8dP   i8" "8i 
+     88      ,8P ,8'    8I   88   I8, ,8I  I8P    I8P    I8, ,8I 
+     88_____,d8',dP     Y8,_,88,_ `YbadP' ,d8b,_ ,d8b,_  `YbadP' 
+    88888888P"  8P      `Y88P""Y8888P"Y8888P'"Y888P'"Y88888P"Y888
+%}
+
 \version "2.12.3"
 
-% Layout and paper settings for Brielle
+%%% { CONFIGURATION
+brTimeKey = { \time 6/8 \key g \major }
 
-\include "brielle.ly"
+% Pick which flavor of things you want
+% #'preprod or #'release
+brVAFlavor   = #'preprod % verse A
+brTrFlavor   = #'preprod % transition
+brCAFlavor   = #'preprod % chorus
+brCBFlavor   = #'preprod
+brVBFlavor   = #'preprod % verse B
+brCEndFlavor = #'preprod % ending
+
+% slashes -- turn on improvisation (voices need the "Pitch_squash_engraver")
+% and hide tab noteheads.
+sl = {
+  \improvisationOn
+  %\override TabNoteHead #'transparent = ##t
+  \override TabNoteHead #'stencil = ##f
+  % ^ this is better but makes warnings
+}
+nsl = {
+  \improvisationOff
+  %\revert TabNoteHead #'transparent
+  \revert TabNoteHead #'stencil
+}
+%%% }
+
+%%% { INCLUDES
+\include "brielle-chords.ly"
+\include "brielle-guitar.ly"
+\include "brielle-lyrics.ly"
+\include "brielle-voice.ly"
+%%% }
 
 \score {<<
   \new ChordNames \brChords
@@ -16,7 +59,6 @@
   >>
 >>}
 
-%#(set-global-staff-size 25)
 \layout {
   % This squashes slashes (set with \sl or \improvisationOn) to be on the same
   % staff line. Applied to every voice.

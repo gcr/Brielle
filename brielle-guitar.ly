@@ -38,9 +38,7 @@ brGuitarChorus = \relative c' {
 
 }
 
-
 %%% STRUCTURE
-
 brGuitar = {
   \brGuitarIntro
   \brGuitarIntro % also VAa

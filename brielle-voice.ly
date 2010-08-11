@@ -51,8 +51,9 @@ brVoiceTrA = \relative c'' {
   a4 g8 b4 a8~ |  % TIES!
   a4 g8 b4 e,8~ | % TIES! Triple tied measure combo
   e4 r e |
-  d \tag #'preprod {d4 g8}
-    \tag #'release {g4 e8 } a8~ |    % SO MANY TIES WHAT.
+  d \tag #'preprod {d4 g8 }
+    \tag #'release {g4 e8 }
+    a8~ | % SO MANY TIES WHAT IS THIS I DON'T EVEN
   a2. |
   r2.|
 }
@@ -186,7 +187,7 @@ brVoice = {
   \keepWithTag \brCAFlavor \brVoiceCA
   \keepWithTag \brCBFlavor \brVoiceCB
   \brVoiceCEndA
-  g'2. | % tied with previous
+  g'2. | % HACK: tied with previous
   R2.*15
   \keepWithTag \brVBFlavor \brVoiceVB
   \keepWithTag \brTrFlavor \brVoiceTrB

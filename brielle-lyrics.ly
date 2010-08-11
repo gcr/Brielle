@@ -1,12 +1,14 @@
 %%% LYRICS
 brLyricsVA = \lyricmode {
+  % First verse
   There's a hand -- writ -- ten note
   pressed in the door
   of her screened- in porch
   and I am sail -- ing a -- way
   re -- cal -- ling that day
   \tag #'preprod { miles }
-  \tag #'release { mi -- les } from shore.
+  \tag #'release { mi -- les }
+      from shore.
 
   She was still wear -- ing white
   and ro -- bin's egg blue;
@@ -37,10 +39,9 @@ brLyricsCA = \lyricmode {
 brLyricsCB = \lyricmode {
   The fro -- zen days we set a -- blaze
   sent me drif -- ting a -- way!
-  Like a but -- ter -- fly, \tag #'preprod { I }
-                            \tag #'release { you } floa -- ted by
-  \tag #'preprod { and now I'm a -- lone. }
-  \tag #'release { and now you're a -- lone. }
+  Like a but -- ter -- fly,
+  \tag #'preprod { I floa -- ted by and now I'm a -- lone. }
+  \tag #'release { you floa -- ted by and now you're a -- lone. }
   I wish I knew when I'll be back a -- gain.
 }
 brLyricsCEndA = \lyricmode {
@@ -56,12 +57,16 @@ brLyricsVB = \lyricmode {
   and cob -- ble -- stone paths
   that wind through the trees.
 
-  \tag #'preprod { Bre -- athing the sweet o -- cean air
+  \tag #'preprod {
+    Bre -- athing the sweet o -- cean air
     makes a shy boy a -- ware
-    that he could be free! }
-  \tag #'release { Bre -- athing the sweet for -- est air
+    that he could be free!
+  }
+  \tag #'release {
+    Bre -- athing the sweet for -- est air
     makes a blue -- bird a -- ware 
-    that she could be free! }
+    that she could be free!
+  }
 }
 
 brLyricsCEndB = \lyricmode {

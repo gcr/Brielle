@@ -31,7 +31,7 @@ sl = {
   \improvisationOn
   %\override TabNoteHead #'transparent = ##t
   \override TabNoteHead #'stencil = ##f
-  % ^ this is better but makes warnings
+  % setting no stencil is better but makes warnings
 }
 nsl = {
   \improvisationOff

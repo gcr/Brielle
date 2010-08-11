@@ -247,7 +247,7 @@ brChordsTr = \chordmode {
   g
   a
   c
-  g
+  s
   d
 }
 %%% }
@@ -278,11 +278,18 @@ brGuitarTr = \relative c' {
     g:aug/dis       % G augmented w/ dis on bottom
     g:/d            % G natural w/ D on bottom
     cis:m6-^5       % 1st inverted A alternate: g:5-/des
-    c
+    c4.
   }
-  <b d g d'>4. \sl c8 c4 \nsl |
-  <d a' d fis>4. \sl d8 d4 |
-  d4 d8 d8 d8 d8 \nsl |
+  \sl c4 c8 |
+  c4. c8 c4 \nsl |
+  <d a' d fis>4. \sl d4 d8 |
+  d4. d8 d8 d8 \nsl |
+}
+brGuitarChorus = \relative c' {
+  <g b d g b g'>4
+  \sl g8 g4 g8 |
+  g4 g8 g4 g8 \nsl|
+
 }
 
 %%% }
@@ -342,6 +349,7 @@ brGuitar = {
   \brGuitarIntro % also VAa
   \brGuitarIntro % also VAb
   \brGuitarTr
+  \brGuitarChorus
 }
 
 %%% }
